@@ -26,6 +26,11 @@ public class CustomAdapter extends ArrayAdapter {
     }
 
     @Override
+    public int getCount() {
+        return listdata.size();
+    }
+
+    @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View view = inflater.inflate(R.layout.custom_item, parent, false);
