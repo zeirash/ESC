@@ -16,7 +16,7 @@ import java.util.ArrayList;
 
 public class CustomAdapter extends ArrayAdapter {
     //why is not working...
-    DbHandler myDbHandler;
+    DbHandler myDbHandler = new DbHandler(getContext(), null);
     ArrayList<ListData> listdata;
 
 
