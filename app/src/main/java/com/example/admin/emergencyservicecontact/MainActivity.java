@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         myDbHandler = new DbHandler(this, null);
-        //input data ke database
+        //input data ke database hrs pake sharedpreference
         myDbHandler.inputData();
 
         Bundle nationNameFromLandingPage = getIntent().getExtras();
