@@ -2,6 +2,7 @@ package com.example.admin.emergencyservicecontact;
 
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -29,14 +30,26 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
+        //shared preference
+        SharedPreferences sp = this.getPreferences(Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putBoolean("checkingFirstRun", true);
+        Boolean isFirstRun = sp.getBoolean("checkingFirstRun", true);
+        //checking first run
+        if(isFirstRun) {
+            myDbHandler = new DbHandler(this, null);
+            myDbHandler.inputData();
+            Intent intent = new Intent(this, LandingPage.class);
+            startActivity(intent);
+            editor.putBoolean("checkingFirstRun", false).commit();
+        }
+        //===========================================================================
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        myDbHandler = new DbHandler(this, null);
-        //input data ke database hrs pake sharedpreference
-        myDbHandler.inputData();
+        //myDbHandler = new DbHandler(this, null);
+        //myDbHandler.inputData();
 
         Bundle nationNameFromLandingPage = getIntent().getExtras();
         if(nationNameFromLandingPage == null) {
@@ -61,7 +74,8 @@ public class MainActivity extends AppCompatActivity {
                         switch(item.getItemId()) {
                             //gimana cara pindah ke landingpage activity
                             case R.id.settings_id:
-                                goToLandingPage();
+                                //goToLandingPage();
+                                intent = new Intent(MainActivity.this, LandingPage.class);
                                 break;
                         }
 
