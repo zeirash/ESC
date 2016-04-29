@@ -443,7 +443,7 @@ public class DbHandler extends SQLiteOpenHelper {
         ArrayList<ListData> myListData = new ArrayList<ListData>();
         SQLiteQueryBuilder builder = new SQLiteQueryBuilder();
         try {
-            String query =  "SELECT serviceType, phoneNumber " +
+            String query =  "SELECT DISTINCT serviceType, phoneNumber " +
                             "FROM tblNations " +
                             "WHERE nationName= \""+nation+"\"";
             Cursor cursor = db.rawQuery(query, null);
