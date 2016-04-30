@@ -48,14 +48,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
-        //myDbHandler = new DbHandler(this, null);
-        //myDbHandler.inputData();
-
-        Bundle nationNameFromLandingPage = getIntent().getExtras();
+        drawerLayout.closeDrawers();
+        /*Bundle nationNameFromLandingPage = getIntent().getExtras();
         if(nationNameFromLandingPage == null) {
             return;
-        }
-        nationPassData = nationNameFromLandingPage.getString("nationResult");
+        }*/
+        //nationPassData = nationNameFromLandingPage.getString("nationResult");
+        SharedPreferences sp1 = this.getSharedPreferences("nationResultData",Context.MODE_PRIVATE);
+        nationPassData = sp1.getString("nationNamePassData", "");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         TextView titleText = (TextView) toolbar.findViewById(R.id.toolbar_title);
@@ -72,9 +72,8 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public boolean onNavigationItemSelected(MenuItem item) {
                         switch(item.getItemId()) {
-                            //gimana cara pindah ke landingpage activity
+                            //pindah ke landingpage activity
                             case R.id.settings_id:
-                                //goToLandingPage();
                                 intent = new Intent(MainActivity.this, LandingPage.class);
                                 break;
                         }
@@ -86,9 +85,6 @@ public class MainActivity extends AppCompatActivity {
         );
     }
 
-    public void goToLandingPage() {
-        intent = new Intent(this, LandingPage.class);
-    }
 /*
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
@@ -101,12 +97,6 @@ public class MainActivity extends AppCompatActivity {
         intent = new Intent(this, ServicePage.class);
         String nationResult = nationPassData;
         intent.putExtra("nationResult", nationResult);
-        startActivity(intent);
-    }
-
-    //utk sementara karna item d navigation drawer gbs diklik
-    public void onClickSetting(View view) {
-        intent = new Intent(this, LandingPage.class);
         startActivity(intent);
     }
 
