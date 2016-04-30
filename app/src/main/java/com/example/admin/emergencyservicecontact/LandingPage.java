@@ -1,9 +1,9 @@
 package com.example.admin.emergencyservicecontact;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -27,17 +27,22 @@ public class LandingPage extends AppCompatActivity {
         ArrayList<String> listNation = myDbHandler.getNationName();
         //masukin data k spinner dri database
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.spinner_text, listNation);
+        spinner.setPrompt("Select country");
         spinner.setAdapter(spinnerAdapter);
         //spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
     }
-
-    //kenapa lemot kalau di klik confirm
+    
     public void onClickConfirm(View view) {
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
-        intent = new Intent(this, MainActivity.class);
         String nationResult = spinner.getSelectedItem().toString();
-        intent.putExtra("nationResult", nationResult);
+
+        SharedPreferences sp = this.getSharedPreferences("nationResultData",Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sp.edit();
+        editor.putString("nationNamePassData", nationResult);
+        editor.commit();
+
+        intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 
