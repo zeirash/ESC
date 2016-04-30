@@ -10,61 +10,33 @@
     tools:showIn="@layout/activity_main"
     android:background="#2f2f2f"
     android:id="@+id/drawer_layout">
-    <android.support.design.widget.CoordinatorLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fitsSystemWindows="true"
-        tools:context="com.example.admin.emergencyservicecontact.MainActivity">
 
-        <android.support.design.widget.AppBarLayout
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            layout="@layout/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:theme="@style/AppTheme.AppBarOverlay">
+            android:text="Emergency"
+            android:textSize="40sp"
+            android:textColor="#ffffff"
+            android:id="@+id/btnEmergency"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:onClick="onClickEmergency"
+            android:background="#951e1e" />
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="#101010"
-                app:popupTheme="@style/AppTheme.PopupOverlay">
+    </RelativeLayout>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/toolbar_title"
-                    android:textColor="#ffffff"
-                    android:textSize="30dp"
-                    android:layout_gravity="center_horizontal"/>
-
-            </android.support.v7.widget.Toolbar>
-
-        </android.support.design.widget.AppBarLayout>
-
-        <!--<include layout="@layout/content_main" />-->
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Emergency"
-                android:textSize="40dp"
-                android:textColor="#ffffff"
-                android:id="@+id/btnEmergency"
-                android:layout_marginLeft="16dp"
-                android:layout_marginRight="16dp"
-                android:layout_centerVertical="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentEnd="true"
-                android:onClick="onClickEmergency"
-                android:background="#951e1e" />
-
-        </RelativeLayout>
-
-
-    </android.support.design.widget.CoordinatorLayout>
     <android.support.design.widget.NavigationView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

@@ -7,7 +7,7 @@
     <ImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/esc_icon_launcher"
+        android:src="@mipmap/esc_icon"
         android:id="@+id/image_header"
         android:layout_marginTop="75dp"
         android:layout_marginLeft="30dp"/>
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:text="Emergency"
         android:textColor="#ffffff"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:id="@+id/name_header"
         android:layout_toRightOf="@+id/image_header"
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:text="Service Contact"
         android:textColor="#ffffff"
-        android:textSize="20dp"
+        android:textSize="20sp"
         android:textStyle="bold"
         android:id="@+id/name2_header"
         android:layout_toRightOf="@+id/image_header"
