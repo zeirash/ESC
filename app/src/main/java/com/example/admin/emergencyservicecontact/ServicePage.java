@@ -1,7 +1,6 @@
 package com.example.admin.emergencyservicecontact;
 
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -9,6 +8,8 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.content.Intent;
+import android.net.Uri;
 
 public class ServicePage extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class ServicePage extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         titleText.setText(nationPassData);
 
-        ListView listview = (ListView) findViewById(R.id.listView);
+        final ListView listview = (ListView) findViewById(R.id.listView);
         CustomAdapter myAdapter = new CustomAdapter(this,nationPassData);
         listview.setAdapter(myAdapter);
 
@@ -38,7 +39,11 @@ public class ServicePage extends AppCompatActivity {
                 new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Toast.makeText(ServicePage.this, "We still developing to make a phone call", Toast.LENGTH_LONG).show();
+                        TextView number = (TextView) view.findViewById(R.id.number_textView);
+                        String getNumber = number.getText().toString();
+                        Toast.makeText(ServicePage.this, getNumber, Toast.LENGTH_LONG).show();
+                        //Intent phoneIntent = new Intent(Intent.ACTION_CALL);
+                        //phoneIntent.setData(Uri.parse("tel:\""+getNumber+"\""));
                     }
                 }
         );
