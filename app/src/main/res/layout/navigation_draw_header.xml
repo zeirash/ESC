@@ -5,11 +5,11 @@
     android:background="@drawable/background">
 
     <ImageView
-        android:layout_width="70dp"
-        android:layout_height="70dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:src="@mipmap/esc_icon"
         android:id="@+id/image_header"
-        android:layout_marginTop="75dp"
+        android:layout_marginTop="85dp"
         android:layout_marginLeft="30dp"/>
 
     <TextView

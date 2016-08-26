@@ -22,7 +22,6 @@ import android.support.v7.app.ActionBarDrawerToggle;
 public class MainActivity extends AppCompatActivity {
 
     Intent intent;
-    DbHandler myDbHandler;
     public String nationPassData;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toogle;
@@ -59,8 +58,6 @@ public class MainActivity extends AppCompatActivity {
         //connecting toolbar to drawer layout
         toogle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawerLayout.addDrawerListener(toogle);
-
-
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -82,7 +79,6 @@ public class MainActivity extends AppCompatActivity {
                 break;
 
         }
-
         drawerLayout.closeDrawers();
     }
 
@@ -98,12 +94,16 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("nationResult", nationResult);
         startActivity(intent);
     }
+/*
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         if (toogle.onOptionsItemSelected(item)) {
             return true;
         }
@@ -116,7 +116,7 @@ public class MainActivity extends AppCompatActivity {
         // Pass any configuration change to the drawer toggles
         toogle.onConfigurationChanged(newConfig);
     }
-
+*/
     @Override
     public void onBackPressed() {
         intent = new Intent(Intent.ACTION_MAIN);
