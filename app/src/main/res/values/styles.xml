@@ -3,10 +3,9 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="android:dropDownListViewStyle">@style/mySpinnerStyle</item>
+        <item name="colorPrimary">@color/colorBackgroundBlack</item>
+        <item name="colorPrimaryDark">@color/colorSecondaryDark</item>
+        <item name="colorAccent">@color/colorThirdDark</item>
     </style>
 
     <style name="AppTheme.NoActionBar">
@@ -19,7 +18,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="mySpinnerStyle" parent="android:Widget.ListView.DropDown">
-        <item name="android:divider">#101010</item>
+        <item name="android:divider">#424242</item>
         <item name="android:dividerHeight">1dp</item>
     </style>
 

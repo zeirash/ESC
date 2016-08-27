@@ -11,13 +11,13 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.admin.emergencyservicecontact.LandingPage"
     tools:showIn="@layout/activity_landing_page"
-    android:background="#212121">
+    android:background="@color/colorBackgroundBlack">
 
     <ImageView
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:id="@+id/escIcon"
-        android:src="@mipmap/esc_icon"
+        android:src="@mipmap/ic_launcher"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="94dp" />
@@ -30,7 +30,7 @@
         android:id="@+id/escTextView"
         android:layout_below="@+id/escIcon"
         android:layout_centerHorizontal="true"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorWhite"
         android:layout_marginTop="5dp"
         android:textSize="25sp"
         android:textStyle="bold"
@@ -42,7 +42,7 @@
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Country :"
         android:id="@+id/countryTextView"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorWhite"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"></Spinner>
+        android:layout_alignParentEnd="true" />
 
     <Button
         android:layout_width="match_parent"
@@ -66,8 +66,8 @@
         android:layout_centerHorizontal="true"
         android:onClick="onClickConfirm"
         android:nestedScrollingEnabled="true"
-        android:background="#951e1e"
-        android:textColor="#ffffff"
+        android:background="@color/colorPrimaryRed"
+        android:textColor="@color/colorWhite"
         android:textSize="30sp" />
 
 </RelativeLayout>

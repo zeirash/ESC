@@ -3,6 +3,8 @@ package com.example.admin.emergencyservicecontact;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -29,6 +31,7 @@ public class LandingPage extends AppCompatActivity {
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.spinner_text, listNation);
         spinner.setPrompt("Select country");
         spinner.setAdapter(spinnerAdapter);
+        spinner.getBackground().setColorFilter(Color.parseColor("#424242"), PorterDuff.Mode.SRC_ATOP);
         //spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
 
     }
@@ -40,10 +43,6 @@ public class LandingPage extends AppCompatActivity {
         SharedPreferences sp = this.getSharedPreferences("Checking", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString("nationNamePassData", nationResult);
-        //editor.commit();
-
-        //SharedPreferences sp2 = this.getSharedPreferences("Checking", Context.MODE_PRIVATE);
-        //SharedPreferences.Editor editor2 = sp2.edit();
         editor.putBoolean("checkingFirstRun", false);
         editor.commit();
 

@@ -8,17 +8,14 @@
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context="com.example.admin.emergencyservicecontact.MainActivity"
     tools:showIn="@layout/activity_main"
-    android:background="#212121"
+    android:background="@color/colorBackgroundBlack"
     android:id="@+id/drawer_layout">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <include
-            layout="@layout/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+        <include layout="@layout/toolbar" />
 
         <Button
             android:layout_width="match_parent"
@@ -45,8 +42,6 @@
         android:id="@+id/navigation_view"
         app:menu="@menu/drawer_menu"
         app:headerLayout="@layout/navigation_draw_header"
-        app:itemIconTint="#FFFFFF"
-        app:itemTextColor="#FFFFFF"
         android:layout_gravity="start">
 
     </android.support.design.widget.NavigationView>

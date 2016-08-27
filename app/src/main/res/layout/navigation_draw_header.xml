@@ -2,12 +2,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="160dp"
-    android:background="#000000">
+    android:background="@color/colorBackgroundBlack">
 
     <ImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@mipmap/esc_icon"
+        android:src="@mipmap/ic_launcher"
         android:id="@+id/image_header"
         android:layout_marginTop="75dp"
         android:layout_marginLeft="30dp"/>
@@ -16,7 +16,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Emergency"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold"
         android:id="@+id/name_header"
@@ -28,7 +28,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Service Contact"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorWhite"
         android:textSize="20sp"
         android:textStyle="bold"
         android:id="@+id/name2_header"

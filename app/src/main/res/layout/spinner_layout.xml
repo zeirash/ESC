@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#212121">
+    android:background="@color/colorBackgroundBlack">
 
     <TextView
         android:layout_width="wrap_content"
@@ -10,7 +10,7 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Medium Text"
         android:id="@+id/spinner_text"
-        android:textColor="#ffffff"
+        android:textColor="@color/colorWhite"
         android:paddingBottom="10dp"
         android:paddingTop="10dp"
         android:paddingRight="15dp"
