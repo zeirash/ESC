@@ -37,14 +37,15 @@ public class LandingPage extends AppCompatActivity {
         Spinner spinner = (Spinner) findViewById(R.id.spinner);
         String nationResult = spinner.getSelectedItem().toString();
 
-        SharedPreferences sp = this.getSharedPreferences("nationResultData", Context.MODE_PRIVATE);
+        SharedPreferences sp = this.getSharedPreferences("Checking", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString("nationNamePassData", nationResult);
-        editor.commit();
+        //editor.commit();
 
-        SharedPreferences sp2 = this.getSharedPreferences("Checking", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor2 = sp2.edit();
-        editor2.putBoolean("checkingFirstRun", false).commit();
+        //SharedPreferences sp2 = this.getSharedPreferences("Checking", Context.MODE_PRIVATE);
+        //SharedPreferences.Editor editor2 = sp2.edit();
+        editor.putBoolean("checkingFirstRun", false);
+        editor.commit();
 
         intent = new Intent(this, MainActivity.class);
         startActivity(intent);

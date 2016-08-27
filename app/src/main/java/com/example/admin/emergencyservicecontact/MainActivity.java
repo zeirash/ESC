@@ -4,6 +4,7 @@ package com.example.admin.emergencyservicecontact;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -32,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //shared preference
         SharedPreferences sp = this.getSharedPreferences("Checking", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
+        //SharedPreferences.Editor editor = sp.edit();
         Boolean isFirstRun = sp.getBoolean("checkingFirstRun", true);
         //checking first run
         if(isFirstRun) {
@@ -44,10 +45,12 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
+        navigationView.setBackgroundColor(Color.parseColor("#424242"));
+
         setupDrawerContent(navigationView);
 
-        SharedPreferences sp1 = this.getSharedPreferences("nationResultData",Context.MODE_PRIVATE);
-        nationPassData = sp1.getString("nationNamePassData", "");
+        //SharedPreferences sp1 = this.getSharedPreferences("nationResultData",Context.MODE_PRIVATE);
+        nationPassData = sp.getString("nationNamePassData", "");
         //set toolbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         TextView titleText = (TextView) toolbar.findViewById(R.id.toolbar_title);
