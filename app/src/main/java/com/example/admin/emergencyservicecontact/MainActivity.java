@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
     public void selectDrawerItem(MenuItem menuItem) {
 
         switch(menuItem.getItemId()) {
-            case R.id.settings_id:
+            case R.id.changing_id:
                 intent = new Intent(MainActivity.this, LandingPage.class);
                 startActivity(intent);
                 break;

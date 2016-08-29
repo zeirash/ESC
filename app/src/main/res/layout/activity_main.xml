@@ -20,20 +20,17 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Emergency"
+            android:text="@string/mainpage_btn_emergency"
             android:textSize="40sp"
-            android:textColor="#ffffff"
+            android:textColor="@color/colorWhite"
             android:id="@+id/btnEmergency"
             android:layout_marginLeft="16dp"
             android:layout_marginRight="16dp"
             android:layout_centerVertical="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:background="#951e1e"
+            android:background="@color/colorPrimaryRed"
             android:onClick="onClickEmergency"/>
-
-
-
     </RelativeLayout>
 
     <android.support.design.widget.NavigationView
@@ -42,7 +39,7 @@
         android:id="@+id/navigation_view"
         app:menu="@menu/drawer_menu"
         app:headerLayout="@layout/navigation_draw_header"
-        android:layout_gravity="start">
+        app:itemTextColor="@color/colorThirdDark"
+        android:layout_gravity="start" />
 
-    </android.support.design.widget.NavigationView>
 </android.support.v4.widget.DrawerLayout>

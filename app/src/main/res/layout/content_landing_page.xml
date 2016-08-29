@@ -20,18 +20,18 @@
         android:src="@mipmap/ic_launcher"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="94dp" />
+        android:layout_marginTop="60dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Emergency Service Contact"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/title"
         android:id="@+id/escTextView"
         android:layout_below="@+id/escIcon"
         android:layout_centerHorizontal="true"
         android:textColor="@color/colorWhite"
-        android:layout_marginTop="5dp"
+        android:layout_marginTop="35dp"
         android:textSize="25sp"
         android:textStyle="bold"
         android:textIsSelectable="false" />
@@ -40,7 +40,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Country :"
+        android:text="@string/landingpage_country_text"
         android:id="@+id/countryTextView"
         android:textColor="@color/colorWhite"
         android:layout_centerVertical="true"
@@ -59,7 +59,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Confirm"
+        android:text="@string/landingpage_btn_confirm"
         android:id="@+id/btnConfirm"
         android:layout_marginTop="63dp"
         android:layout_below="@+id/spinner"
