@@ -3,17 +3,12 @@ package com.example.admin.emergencyservicecontact;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.content.res.Configuration;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Gravity;
 import android.view.View;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.TextView;
@@ -60,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
         //connecting toolbar to drawer layout
         toogle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawerLayout.addDrawerListener(toogle);
+        //navigationView.getMenu().findItem(R.id.changing_id).setChecked(false);
+        //navigationView.getMenu().findItem(R.id.about_id).setChecked(false);
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -72,6 +69,9 @@ public class MainActivity extends AppCompatActivity {
                     }
                 });
     }
+
+    //note: ubah settings jdi about> item navigation drawer belum unchecked kl press back
+    //sama klo bisa tambahin feature change language
     public void selectDrawerItem(MenuItem menuItem) {
 
         switch(menuItem.getItemId()) {
@@ -79,7 +79,10 @@ public class MainActivity extends AppCompatActivity {
                 intent = new Intent(MainActivity.this, LandingPage.class);
                 startActivity(intent);
                 break;
-
+            case R.id.about_id:
+                intent = new Intent(MainActivity.this, AboutPage.class);
+                startActivity(intent);
+                break;
         }
         drawerLayout.closeDrawers();
     }
@@ -96,29 +99,40 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("nationResult", nationResult);
         startActivity(intent);
     }
-/*
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
-    }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (toogle.onOptionsItemSelected(item)) {
+    /*@Override
+    public boolean onPrepareOptionsMenu(Menu menu) {
+        super.onPrepareOptionsMenu(menu);
+        navigationView.getMenu().clear();
+        navigationView.inflateMenu(R.menu.drawer_menu);
+        navigationView.getMenu().findItem(R.id.changing_id).setChecked(false);
+        navigationView.getMenu().findItem(R.id.settings_id).setChecked(false);
+        return true;
+    }*/
+
+    /*
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+            // Inflate the menu; this adds items to the action bar if it is present.
+            getMenuInflater().inflate(R.menu.menu_main, menu);
             return true;
         }
-        return super.onOptionsItemSelected(item);
-    }
 
-    @Override
-    public void onConfigurationChanged(Configuration newConfig) {
-        super.onConfigurationChanged(newConfig);
-        // Pass any configuration change to the drawer toggles
-        toogle.onConfigurationChanged(newConfig);
-    }
-*/
+        @Override
+        public boolean onOptionsItemSelected(MenuItem item) {
+            if (toogle.onOptionsItemSelected(item)) {
+                return true;
+            }
+            return super.onOptionsItemSelected(item);
+        }
+
+        @Override
+        public void onConfigurationChanged(Configuration newConfig) {
+            super.onConfigurationChanged(newConfig);
+            // Pass any configuration change to the drawer toggles
+            toogle.onConfigurationChanged(newConfig);
+        }
+    */
     @Override
     public void onBackPressed() {
         intent = new Intent(Intent.ACTION_MAIN);

@@ -7,9 +7,9 @@
             android:icon="@drawable/changing_arrow">
         </item>
         <item
-            android:id="@+id/settings_id"
-            android:title="@string/settings_menu"
-            android:icon="@drawable/settings_icon">
+            android:id="@+id/about_id"
+            android:title="@string/about_menu"
+            android:icon="@drawable/info">
         </item>
     </group>
 </menu>
