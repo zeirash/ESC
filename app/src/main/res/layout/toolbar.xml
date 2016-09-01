@@ -13,7 +13,8 @@
         android:layout_width="match_parent"
         android:fitsSystemWindows="true"
         android:minHeight="?attr/actionBarSize"
-        android:background="@color/colorSecondaryDark">
+        android:background="@color/colorSecondaryDark"
+        android:theme="@style/ToolBarStyle">
 
         <TextView
             android:layout_width="wrap_content"

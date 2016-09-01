@@ -1,5 +1,7 @@
 package com.example.admin.emergencyservicecontact;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -13,6 +15,7 @@ import android.widget.TextView;
 public class FragmentMain extends Fragment {
     Intent intent;
     public String nationPassData;
+    private Activity mActivity;
 
     public FragmentMain() {
         // Required empty public constructor
@@ -32,13 +35,16 @@ public class FragmentMain extends Fragment {
             @Override
             public void onClick(View v) {
                 intent = new Intent(getActivity(), ServicePage.class);
-                String nationResult = nationPassData;
-                intent.putExtra("nationResult", nationResult);
+                intent.putExtra("nationResult", nationPassData);
                 startActivity(intent);
             }
         });
 
         return view;
     }
-
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        mActivity = (Activity) context;
+    }
 }

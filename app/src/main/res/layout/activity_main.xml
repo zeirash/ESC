@@ -11,9 +11,10 @@
     android:background="@color/colorBackgroundBlack"
     android:id="@+id/drawer_layout">
 
-    <RelativeLayout
+    <android.support.design.widget.CoordinatorLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
 
         <include layout="@layout/toolbar" />
 
@@ -22,7 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
         </FrameLayout>
-    </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
         android:layout_width="match_parent"

@@ -6,22 +6,6 @@
     tools:context=".FragmentAboutPage"
     android:background="@color/colorBackgroundBlack">
 
-    <!--android.support.v7.widget.Toolbar
-        android:id="@+id/setting_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorSecondaryDark"
-        android:theme="@style/ToolBarStyle">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/setting_toolbar_title"
-            android:textColor="@color/colorWhite"
-            android:textSize="30sp"
-            android:text="About"/>
-    </android.support.v7.widget.Toolbar-->
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

@@ -1,6 +1,7 @@
 package com.example.admin.emergencyservicecontact;
 
 
+import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -41,15 +42,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        //set fragment
-        FragmentMain fragmentMain = new FragmentMain();
-        fragmentTransaction = getSupportFragmentManager().beginTransaction();
-        fragmentTransaction.replace(R.id.fragment_container, fragmentMain);
-        fragmentTransaction.commit();
-
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
-
         setupDrawerContent(navigationView);
 
         nationPassData = sp.getString("nationNamePassData", "");
@@ -60,9 +54,16 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         //ganti title sesuai nation yg dipilih
         titleText.setText(nationPassData);
+
         //connecting toolbar to drawer layout
         toogle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawerLayout.addDrawerListener(toogle);
+
+        //set fragment
+        FragmentMain fragmentMain = new FragmentMain();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragmentMain);
+        fragmentTransaction.commit();
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -153,6 +154,7 @@ public class MainActivity extends AppCompatActivity {
             toogle.onConfigurationChanged(newConfig);
         }
     */
+
     @Override
     public void onBackPressed() {
         intent = new Intent(Intent.ACTION_MAIN);
