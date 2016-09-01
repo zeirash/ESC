@@ -5,10 +5,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.MenuItem;
 import android.content.Intent;
 import android.widget.TextView;
@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
     ActionBarDrawerToggle toogle;
     NavigationView navigationView;
     private Toolbar toolbar;
+    FragmentTransaction fragmentTransaction;
+    TextView titleText;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +40,22 @@ public class MainActivity extends AppCompatActivity {
         //===========================================================================
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //set fragment
+        FragmentMain fragmentMain = new FragmentMain();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragmentMain);
+        fragmentTransaction.commit();
+
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
 
         setupDrawerContent(navigationView);
 
-        //SharedPreferences sp1 = this.getSharedPreferences("nationResultData",Context.MODE_PRIVATE);
         nationPassData = sp.getString("nationNamePassData", "");
         //set toolbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
-        TextView titleText = (TextView) toolbar.findViewById(R.id.toolbar_title);
+        titleText = (TextView) toolbar.findViewById(R.id.toolbar_title);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         //ganti title sesuai nation yg dipilih
@@ -55,8 +63,6 @@ public class MainActivity extends AppCompatActivity {
         //connecting toolbar to drawer layout
         toogle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawerLayout.addDrawerListener(toogle);
-        //navigationView.getMenu().findItem(R.id.changing_id).setChecked(false);
-        //navigationView.getMenu().findItem(R.id.about_id).setChecked(false);
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -75,13 +81,27 @@ public class MainActivity extends AppCompatActivity {
     public void selectDrawerItem(MenuItem menuItem) {
 
         switch(menuItem.getItemId()) {
+            case R.id.call_id:
+                FragmentMain fragmentMain = new FragmentMain();
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragmentMain);
+                fragmentTransaction.commit();
+                //intent = new Intent(MainActivity.this, LandingPage.class);
+                //startActivity(intent);
+                break;
             case R.id.changing_id:
                 intent = new Intent(MainActivity.this, LandingPage.class);
                 startActivity(intent);
                 break;
             case R.id.about_id:
-                intent = new Intent(MainActivity.this, AboutPage.class);
-                startActivity(intent);
+                FragmentAboutPage fragmentAboutPage = new FragmentAboutPage();
+                fragmentTransaction = getSupportFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.fragment_container, fragmentAboutPage);
+                fragmentTransaction.commit();
+                //titleText = (TextView) toolbar.findViewById(R.id.toolbar_title);
+                titleText.setText("About");
+                //intent = new Intent(MainActivity.this, FragmentAboutPage.class);
+                //startActivity(intent);
                 break;
         }
         drawerLayout.closeDrawers();
@@ -93,12 +113,12 @@ public class MainActivity extends AppCompatActivity {
         toogle.syncState();
     }
 
-    public void onClickEmergency(View view) {
+    /*public void onClickEmergency(View view) {
         intent = new Intent(this, ServicePage.class);
         String nationResult = nationPassData;
         intent.putExtra("nationResult", nationResult);
         startActivity(intent);
-    }
+    }*/
 
     /*@Override
     public boolean onPrepareOptionsMenu(Menu menu) {

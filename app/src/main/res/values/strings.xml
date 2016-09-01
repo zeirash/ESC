@@ -9,6 +9,7 @@
     <string name="title">Emergency Service Contact</string>
 
     <!-- Drawer menu item -->
+    <string name="call_menu">Call</string>
     <string name="change_country_menu">Change country</string>
     <string name="about_menu">About</string>
 
