@@ -1,15 +1,11 @@
 package com.example.admin.emergencyservicecontact;
 
-/**
- * Created by Admin on 27/04/2016.
- */
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.content.Context;
 import android.content.ContentValues;
 import android.database.Cursor;
 import java.util.ArrayList;
-import java.util.List;
 
 public class DbHandler extends SQLiteOpenHelper {
 

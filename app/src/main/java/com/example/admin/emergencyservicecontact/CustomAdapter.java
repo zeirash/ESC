@@ -35,7 +35,10 @@ public class CustomAdapter extends ArrayAdapter {
         TextView serviceTypeText = (TextView) view.findViewById(R.id.serviceType_textView);
         TextView numberText = (TextView) view.findViewById(R.id.number_textView);
         //set value dri ListData object
-        telephoneIcon.setImageResource(R.drawable.icon);
+        if(objectListData.getServiceType().equals("General")) telephoneIcon.setImageResource(R.drawable.icon);
+        else if(objectListData.getServiceType().equals("Police")) telephoneIcon.setImageResource(R.drawable.hat_of_a_policeman);
+        else if(objectListData.getServiceType().equals("Medical")) telephoneIcon.setImageResource(R.drawable.plus_medical);
+        else if(objectListData.getServiceType().equals("Fire")) telephoneIcon.setImageResource(R.drawable.fire);
         serviceTypeText.setText(objectListData.getServiceType());
         numberText.setText(objectListData.getPhoneNumber());
 
