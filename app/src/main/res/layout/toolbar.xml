@@ -21,8 +21,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/toolbar_title"
             android:textColor="@color/colorWhite"
-            android:textSize="30sp"
-            android:layout_gravity="center_horizontal"/>
+            android:textSize="30sp"/>
     </android.support.v7.widget.Toolbar>
 
 </android.support.design.widget.AppBarLayout>

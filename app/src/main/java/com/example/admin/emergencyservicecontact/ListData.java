@@ -1,9 +1,5 @@
 package com.example.admin.emergencyservicecontact;
 
-/**
- * Created by Admin on 29/04/2016.
- */
-//diperlukan utk tampilin data k listview, tp gagal, gtau salah dmna
 public class ListData {
 
     private String serviceType;

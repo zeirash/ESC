@@ -2,6 +2,7 @@ package com.example.admin.emergencyservicecontact;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
@@ -18,19 +19,19 @@ import android.net.Uri;
 public class ServicePage extends AppCompatActivity {
     private static final int REQUEST_CALL_PHONE = 0;
     private static final int REQUEST_READ_PHONE_STATE = 0;
+    String nationPassData;
+    Intent intent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_service_page);
+        SharedPreferences sp = this.getSharedPreferences("Checking", Context.MODE_PRIVATE);
+        nationPassData = sp.getString("nationNamePassData", "");
 
-        Bundle nationNameFromMainPage = getIntent().getExtras();
-        if(nationNameFromMainPage == null) {
-            return;
-        }
-        String nationPassData = nationNameFromMainPage.getString("nationResult");
-
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        TextView titleText = (TextView) toolbar.findViewById(R.id.toolbar_title);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar_service_page);
+        toolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);
+        TextView titleText = (TextView) toolbar.findViewById(R.id.toolbar_title_service_page);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         titleText.setText(nationPassData);
@@ -63,6 +64,15 @@ public class ServicePage extends AppCompatActivity {
                     }
                 }
         );
+
+        //when user press toolbar back icon
+        toolbar.setNavigationOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                intent = new Intent(getApplicationContext(), MainActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
 }

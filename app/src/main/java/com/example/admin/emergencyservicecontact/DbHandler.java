@@ -24,14 +24,6 @@ public class DbHandler extends SQLiteOpenHelper {
     public static final String COLUMN_NAME_NATION = "nationName";
     public static final String COLUMN_SERVICETYPE_NATION = "serviceType";
     public static final String COLUMN_PHONENUMBER_NATION = "phoneNumber";
-    //Table numbers
-    /*
-    public static final String TABLE_NUMBERS = "tblNumbers";
-    public static final String COLUMN_ID_NUMBER = "_id";
-    public static final String COLUMN_NATIONCODE_NUMBER = "nationCode";
-    public static final String COLUMN_SERVICETYPE_NUMBER = "serviceType";
-    public static final String COLUMN_PHONENUMBER_NUMBER = "phoneNumber";
-    */
 
     public DbHandler(Context context, SQLiteDatabase.CursorFactory factory) {
         super(context, DATABASE_NAME, factory, DATABASE_VERSION);

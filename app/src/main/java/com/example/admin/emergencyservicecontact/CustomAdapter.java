@@ -1,9 +1,5 @@
 package com.example.admin.emergencyservicecontact;
 
-/**
- * Created by Admin on 27/04/2016.
- */
-import android.content.ContentValues;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,7 +11,6 @@ import android.widget.TextView;
 import java.util.ArrayList;
 
 public class CustomAdapter extends ArrayAdapter {
-    //why is not working...
     DbHandler myDbHandler = new DbHandler(getContext(), null);
     ArrayList<ListData> listdata;
 

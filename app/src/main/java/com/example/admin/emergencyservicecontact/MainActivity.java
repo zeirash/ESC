@@ -1,7 +1,5 @@
 package com.example.admin.emergencyservicecontact;
 
-
-import android.app.Fragment;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -87,8 +85,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragmentMain);
                 fragmentTransaction.commit();
-                //intent = new Intent(MainActivity.this, LandingPage.class);
-                //startActivity(intent);
+                titleText.setText(nationPassData);
                 break;
             case R.id.changing_id:
                 intent = new Intent(MainActivity.this, LandingPage.class);
@@ -99,10 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragmentAboutPage);
                 fragmentTransaction.commit();
-                //titleText = (TextView) toolbar.findViewById(R.id.toolbar_title);
                 titleText.setText("About");
-                //intent = new Intent(MainActivity.this, FragmentAboutPage.class);
-                //startActivity(intent);
                 break;
         }
         drawerLayout.closeDrawers();
@@ -113,47 +107,6 @@ public class MainActivity extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
         toogle.syncState();
     }
-
-    /*public void onClickEmergency(View view) {
-        intent = new Intent(this, ServicePage.class);
-        String nationResult = nationPassData;
-        intent.putExtra("nationResult", nationResult);
-        startActivity(intent);
-    }*/
-
-    /*@Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        super.onPrepareOptionsMenu(menu);
-        navigationView.getMenu().clear();
-        navigationView.inflateMenu(R.menu.drawer_menu);
-        navigationView.getMenu().findItem(R.id.changing_id).setChecked(false);
-        navigationView.getMenu().findItem(R.id.settings_id).setChecked(false);
-        return true;
-    }*/
-
-    /*
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            // Inflate the menu; this adds items to the action bar if it is present.
-            getMenuInflater().inflate(R.menu.menu_main, menu);
-            return true;
-        }
-
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-            if (toogle.onOptionsItemSelected(item)) {
-                return true;
-            }
-            return super.onOptionsItemSelected(item);
-        }
-
-        @Override
-        public void onConfigurationChanged(Configuration newConfig) {
-            super.onConfigurationChanged(newConfig);
-            // Pass any configuration change to the drawer toggles
-            toogle.onConfigurationChanged(newConfig);
-        }
-    */
 
     @Override
     public void onBackPressed() {

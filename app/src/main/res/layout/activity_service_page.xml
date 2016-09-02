@@ -13,19 +13,19 @@
         android:theme="@style/AppTheme.AppBarOverlay">
 
         <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
+            android:id="@+id/toolbar_service_page"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/colorSecondaryDark"
-            app:popupTheme="@style/AppTheme.PopupOverlay">
+            app:popupTheme="@style/AppTheme.PopupOverlay"
+            app:theme="@style/ToolBarStyle">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/toolbar_title"
+                android:id="@+id/toolbar_title_service_page"
                 android:textColor="@color/colorWhite"
-                android:textSize="30sp"
-                android:layout_gravity="center_horizontal"/>
+                android:textSize="30sp"/>
 
         </android.support.v7.widget.Toolbar>
 
