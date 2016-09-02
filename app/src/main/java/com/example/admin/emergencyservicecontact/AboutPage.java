@@ -11,7 +11,7 @@ public class AboutPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_setting_page);
+        setContentView(R.layout.activity_about_page);
 
         Toolbar settingToolbar = (Toolbar) findViewById(R.id.setting_toolbar);
         settingToolbar.setNavigationIcon(R.drawable.abc_ic_ab_back_mtrl_am_alpha);

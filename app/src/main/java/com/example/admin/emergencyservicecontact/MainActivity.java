@@ -28,7 +28,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         //shared preference
         SharedPreferences sp = this.getSharedPreferences("Checking", Context.MODE_PRIVATE);
-        //SharedPreferences.Editor editor = sp.edit();
         Boolean isFirstRun = sp.getBoolean("checkingFirstRun", true);
         //checking first run
         if(isFirstRun) {
@@ -43,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
 
         setupDrawerContent(navigationView);
 
-        //SharedPreferences sp1 = this.getSharedPreferences("nationResultData",Context.MODE_PRIVATE);
         nationPassData = sp.getString("nationNamePassData", "");
         //set toolbar
         toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -55,8 +53,6 @@ public class MainActivity extends AppCompatActivity {
         //connecting toolbar to drawer layout
         toogle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.drawer_open, R.string.drawer_close);
         drawerLayout.addDrawerListener(toogle);
-        //navigationView.getMenu().findItem(R.id.changing_id).setChecked(false);
-        //navigationView.getMenu().findItem(R.id.about_id).setChecked(false);
     }
 
     private void setupDrawerContent(NavigationView navigationView) {
@@ -100,39 +96,6 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /*@Override
-    public boolean onPrepareOptionsMenu(Menu menu) {
-        super.onPrepareOptionsMenu(menu);
-        navigationView.getMenu().clear();
-        navigationView.inflateMenu(R.menu.drawer_menu);
-        navigationView.getMenu().findItem(R.id.changing_id).setChecked(false);
-        navigationView.getMenu().findItem(R.id.settings_id).setChecked(false);
-        return true;
-    }*/
-
-    /*
-        @Override
-        public boolean onCreateOptionsMenu(Menu menu) {
-            // Inflate the menu; this adds items to the action bar if it is present.
-            getMenuInflater().inflate(R.menu.menu_main, menu);
-            return true;
-        }
-
-        @Override
-        public boolean onOptionsItemSelected(MenuItem item) {
-            if (toogle.onOptionsItemSelected(item)) {
-                return true;
-            }
-            return super.onOptionsItemSelected(item);
-        }
-
-        @Override
-        public void onConfigurationChanged(Configuration newConfig) {
-            super.onConfigurationChanged(newConfig);
-            // Pass any configuration change to the drawer toggles
-            toogle.onConfigurationChanged(newConfig);
-        }
-    */
     @Override
     public void onBackPressed() {
         intent = new Intent(Intent.ACTION_MAIN);
