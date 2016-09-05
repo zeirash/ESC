@@ -13,7 +13,6 @@ import android.content.Intent;
 import android.widget.TextView;
 import android.support.v7.app.ActionBarDrawerToggle;
 
-
 public class MainActivity extends AppCompatActivity {
 
     Intent intent;
@@ -24,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     private Toolbar toolbar;
     FragmentTransaction fragmentTransaction;
     TextView titleText;
-
+    public static String TAG = "mylog";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         //shared preference
@@ -43,6 +42,7 @@ public class MainActivity extends AppCompatActivity {
         drawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         navigationView = (NavigationView) findViewById(R.id.navigation_view);
         setupDrawerContent(navigationView);
+        navigationView.getMenu().findItem(R.id.call_id).setChecked(true);
 
         nationPassData = sp.getString("nationNamePassData", "");
         //set toolbar
@@ -117,4 +117,16 @@ public class MainActivity extends AppCompatActivity {
         finish();
         System.exit(0);
     }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        navigationView.getMenu().findItem(R.id.call_id).setChecked(true);
+        navigationView.getMenu().findItem(R.id.changing_id).setChecked(false);
+        FragmentMain fragmentMain = new FragmentMain();
+        fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragmentMain);
+        fragmentTransaction.commit();
+    }
+
 }

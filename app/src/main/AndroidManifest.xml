@@ -35,10 +35,6 @@
             android:name=".Splash"
             android:label="@string/title_activity_splash"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".FragmentAboutPage"
-            android:label="@string/title_activity_about_page"
-            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

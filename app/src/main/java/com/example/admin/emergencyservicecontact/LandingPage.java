@@ -17,7 +17,7 @@ public class LandingPage extends AppCompatActivity {
 
     Intent intent;
     DbHandler myDbHandler;
-
+    Spinner spinner;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,15 +28,17 @@ public class LandingPage extends AppCompatActivity {
         ArrayList<String> listNation = myDbHandler.getNationName();
         //masukin data k spinner dri database
         ArrayAdapter<String> spinnerAdapter = new ArrayAdapter<String>(this, R.layout.spinner_layout, R.id.spinner_text, listNation);
-        spinner.setPrompt("Select country");
+        //spinner.setPrompt("Select country");
         spinner.setAdapter(spinnerAdapter);
         spinner.getBackground().setColorFilter(Color.parseColor("#424242"), PorterDuff.Mode.SRC_ATOP);
         //spinnerAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-
+        SharedPreferences sp = this.getSharedPreferences("Checking", Context.MODE_PRIVATE);
+        spinner = (Spinner) findViewById(R.id.spinner);
+        spinner.setSelection(spinnerAdapter.getPosition(sp.getString("nationNamePassData", "")));
     }
     
     public void onClickConfirm(View view) {
-        Spinner spinner = (Spinner) findViewById(R.id.spinner);
+        spinner = (Spinner) findViewById(R.id.spinner);
         String nationResult = spinner.getSelectedItem().toString();
 
         SharedPreferences sp = this.getSharedPreferences("Checking", Context.MODE_PRIVATE);
@@ -62,13 +64,10 @@ public class LandingPage extends AppCompatActivity {
             finish();
             System.exit(0);
         }
-        else super.onBackPressed();
-        /*intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(intent);
-        finish();
-        System.exit(0);
-        super.onBackPressed();*/
+        else {
+            intent = new Intent(getApplicationContext(), MainActivity.class);
+            startActivity(intent);
+            //super.onBackPressed();
+        }
     }
 }

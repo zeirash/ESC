@@ -26,9 +26,12 @@
 
     <!-- About page -->
     <string name="aboutpage_explanation">
-        ESC - Emergency Service Contact is a not-for-profit utility application. Originally an university project and
-        originally planned to be part a collection of tools to save lives such as ‎a mass broadcast app and a flash light.
-        All provided free with a donation option and an opt-in ads model.‎
+        ESC - Emergency Service Contact is a not-for-profit utility application. Emergency Service Contact
+        originally a university project for enterpreneurship. The goal is to be easy, simple and accessible
+        that anyone could pickup and call emergency.
+        \n\n
+        ESC uses advertising as the main form of support, though opt-in in respect to the publisher and the
+        developer of the application. ESC will only receive database updates, bug fixes, and performance tweak.
     </string>
     <string name="aboutpage_explanation2">
         Idea, Design and database by:\nAtn010\nwww.atn010.com‎
