@@ -35,11 +35,23 @@ public class CustomAdapter extends ArrayAdapter {
         TextView serviceTypeText = (TextView) view.findViewById(R.id.serviceType_textView);
         TextView numberText = (TextView) view.findViewById(R.id.number_textView);
         //set value dri ListData object
-        if(objectListData.getServiceType().equals("General")) telephoneIcon.setImageResource(R.drawable.icon);
-        else if(objectListData.getServiceType().equals("Police")) telephoneIcon.setImageResource(R.drawable.hat_of_a_policeman);
-        else if(objectListData.getServiceType().equals("Medical")) telephoneIcon.setImageResource(R.drawable.plus_medical);
-        else if(objectListData.getServiceType().equals("Fire")) telephoneIcon.setImageResource(R.drawable.fire);
-        serviceTypeText.setText(objectListData.getServiceType());
+        if(objectListData.getServiceType().equals("General")) {
+            telephoneIcon.setImageResource(R.drawable.icon);
+            serviceTypeText.setText(R.string.servicetype_general);
+        }
+        else if(objectListData.getServiceType().equals("Police")) {
+            telephoneIcon.setImageResource(R.drawable.hat_of_a_policeman);
+            serviceTypeText.setText(R.string.servicetype_police);
+        }
+        else if(objectListData.getServiceType().equals("Medical")) {
+            telephoneIcon.setImageResource(R.drawable.plus_medical);
+            serviceTypeText.setText(R.string.servicetype_medical);
+        }
+        else if(objectListData.getServiceType().equals("Fire")) {
+            telephoneIcon.setImageResource(R.drawable.fire);
+            serviceTypeText.setText(R.string.servicetype_fire);
+        }
+        //serviceTypeText.setText(objectListData.getServiceType());
         numberText.setText(objectListData.getPhoneNumber());
 
         return view;

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ESC</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_about_page">AboutPage</string>
+    <string name="title_activity_service_page">ServicePage</string>
+    <string name="title_activity_landing_page">LandingPage</string>
+    <string name="drawer_open">Open navigation drawer</string>
+    <string name="drawer_close">Close navigation drawer</string>
+    <string name="title">Kontak Layanan Darurat</string>
+
+    <!-- Drawer menu item -->
+    <string name="call_menu">Telepon</string>
+    <string name="change_country_menu">Ubah negara</string>
+    <string name="about_menu">Tentang</string>
+
+    <!-- Activity main page -->
+    <string name="mainpage_btn_emergency">Darurat</string>
+
+    <!-- Activity landing page -->
+    <string name="landingpage_country_text">Negara :</string>
+    <string name="landingpage_btn_confirm">Konfirm</string>
+
+    <!-- Navigation drawer -->
+    <string name="drawer_header_first_text">Kontak</string>
+    <string name="drawer_header_second_text">Layanan Darurat</string>
+
+    <!-- About page -->
+    <string name="aboutpage_toolbar_title">Tentang</string>
+    <string name="aboutpage_explanation">
+        ESC - Emergency Service Contact (Kontak Layanan Darurat) adalah aplikasi utilitas yang tidak untuk keuntungan.
+        Emergency Service Contact awalnya sebuah proyek universitas untuk kewirausahaan. Tujuannya adalah untuk
+        kemudahan, kesederhana dan mudah diakses hingga siapa pun bisa panggil nomor darurat.
+        \n\n
+        ESC menggunakan iklan sebagai bentuk utama dari dukungan,dan mengunakan sistem opt-in sehubungan
+        dengan penerbit dan pengembang aplikasi. ESC hanya akan menerima pembaruan database, perbaikan
+        masalah, dan penambahan kinerja.
+    </string>
+    <string name="aboutpage_explanation2">
+        Ide, Desain dan database oleh:\nAtn010\nwww.atn010.com‎
+    </string>
+    <string name="aboutpage_explanation3">
+        Di develop oleh:\nZentricode\ndev.zentricode@gmail.com‎
+    </string>
+    <string name="aboutpage_explanation4">
+        Konsultasi dan publikasi oleh:\nDirectDev\ndirectdev.mobile@gmail.com‎
+    </string>
+
+    <!-- DB service type -->
+    <string name="servicetype_general">Umum</string>
+    <string name="servicetype_police">Polisi</string>
+    <string name="servicetype_medical">Medis</string>
+    <string name="servicetype_fire">Kebakaran</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_splash">Splash</string>
+</resources>

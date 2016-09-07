@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 fragmentTransaction = getSupportFragmentManager().beginTransaction();
                 fragmentTransaction.replace(R.id.fragment_container, fragmentAboutPage);
                 fragmentTransaction.commit();
-                titleText.setText("About");
+                titleText.setText(R.string.aboutpage_toolbar_title);
                 break;
         }
         drawerLayout.closeDrawers();

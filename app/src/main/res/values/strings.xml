@@ -25,6 +25,7 @@
     <string name="drawer_header_second_text">Service Contact</string>
 
     <!-- About page -->
+    <string name="aboutpage_toolbar_title">About</string>
     <string name="aboutpage_explanation">
         ESC - Emergency Service Contact is a not-for-profit utility application. Emergency Service Contact
         originally a university project for entrepreneurship. The goal is to be easy, simple and accessible
@@ -42,6 +43,12 @@
     <string name="aboutpage_explanation4">
         Consulted and published by:\nDirectDev\ndirectdev.mobile@gmail.com‎
     </string>
+
+    <!-- DB service type -->
+    <string name="servicetype_general">General</string>
+    <string name="servicetype_police">Police</string>
+    <string name="servicetype_medical">Medical</string>
+    <string name="servicetype_fire">Fire</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
